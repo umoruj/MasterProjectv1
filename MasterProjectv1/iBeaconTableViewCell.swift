@@ -9,7 +9,11 @@
 import UIKit
 
 class iBeaconTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var majorLabel: UILabel!
+    @IBOutlet weak var minorLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54DD0CED5C4D7C043A4371B5 /* Pods_MasterProjectv1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A22525F44D41FB9FA0D9174 /* Pods_MasterProjectv1.framework */; };
+		9C4648051C3875A200F3B083 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4648041C3875A100F3B083 /* RestApiManager.swift */; };
+		9C5A03311CA03A0200F13702 /* Beacon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5A03301CA03A0200F13702 /* Beacon+CoreDataProperties.swift */; };
+		9CAB5F8B1C20082D0092B178 /* iBeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB5F8A1C20082D0092B178 /* iBeaconTableViewController.swift */; };
+		9CAB5F8D1C20087A0092B178 /* iBeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB5F8C1C20087A0092B178 /* iBeaconTableViewCell.swift */; };
+		9CAB5F8F1C2017820092B178 /* iBeaconInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB5F8E1C2017820092B178 /* iBeaconInputViewController.swift */; };
+		9CAB5F921C20410D0092B178 /* myCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB5F901C20410D0092B178 /* myCoreDataModel.xcdatamodeld */; };
+		9CAB5FA31C2050EA0092B178 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB5FA11C2050EA0092B178 /* Beacon.swift */; };
+		9CAB5FA51C2054550092B178 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB5FA41C2054550092B178 /* DataController.swift */; };
 		9CC2FFD51C006EAD00A10E16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2FFD41C006EAD00A10E16 /* AppDelegate.swift */; };
 		9CC2FFD71C006EAD00A10E16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2FFD61C006EAD00A10E16 /* ViewController.swift */; };
 		9CC2FFDA1C006EAD00A10E16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC2FFD81C006EAD00A10E16 /* Main.storyboard */; };
@@ -14,6 +23,7 @@
 		9CC2FFDF1C006EAD00A10E16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC2FFDD1C006EAD00A10E16 /* LaunchScreen.storyboard */; };
 		9CC2FFEA1C006EAD00A10E16 /* MasterProjectv1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2FFE91C006EAD00A10E16 /* MasterProjectv1Tests.swift */; };
 		9CC2FFF51C006EAD00A10E16 /* MasterProjectv1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2FFF41C006EAD00A10E16 /* MasterProjectv1UITests.swift */; };
+		E860CADDDE83B40EC86AB9D1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F8C22F2468139CBC5F24D8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +44,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16F8C22F2468139CBC5F24D8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		251EB276BA28D12051FDD287 /* Pods-MasterProjectv1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterProjectv1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MasterProjectv1/Pods-MasterProjectv1.debug.xcconfig"; sourceTree = "<group>"; };
+		6A22525F44D41FB9FA0D9174 /* Pods_MasterProjectv1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterProjectv1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4648041C3875A100F3B083 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
+		9C5A03301CA03A0200F13702 /* Beacon+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Beacon+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9CAB5F8A1C20082D0092B178 /* iBeaconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iBeaconTableViewController.swift; sourceTree = "<group>"; };
+		9CAB5F8C1C20087A0092B178 /* iBeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iBeaconTableViewCell.swift; sourceTree = "<group>"; };
+		9CAB5F8E1C2017820092B178 /* iBeaconInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iBeaconInputViewController.swift; sourceTree = "<group>"; };
+		9CAB5F911C20410D0092B178 /* myCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		9CAB5F931C2043CE0092B178 /* MasterProjectv1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MasterProjectv1-Bridging-Header.h"; sourceTree = "<group>"; };
+		9CAB5FA11C2050EA0092B178 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		9CAB5FA41C2054550092B178 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		9CC2FFD11C006EAD00A10E16 /* MasterProjectv1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterProjectv1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC2FFD41C006EAD00A10E16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CC2FFD61C006EAD00A10E16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +69,9 @@
 		9CC2FFF01C006EAD00A10E16 /* MasterProjectv1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterProjectv1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC2FFF41C006EAD00A10E16 /* MasterProjectv1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterProjectv1UITests.swift; sourceTree = "<group>"; };
 		9CC2FFF61C006EAD00A10E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A915D7413EA01246CE03A305 /* Pods-MasterProjectv1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterProjectv1.release.xcconfig"; path = "Pods/Target Support Files/Pods-MasterProjectv1/Pods-MasterProjectv1.release.xcconfig"; sourceTree = "<group>"; };
+		B8B6F0FFEB6E591BA38BBF15 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D075E96B8793F2D9E7E40EEE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E860CADDDE83B40EC86AB9D1 /* libPods.a in Frameworks */,
+				54DD0CED5C4D7C043A4371B5 /* Pods_MasterProjectv1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +101,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8AA394D770217B42232A28CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8B6F0FFEB6E591BA38BBF15 /* Pods.debug.xcconfig */,
+				D075E96B8793F2D9E7E40EEE /* Pods.release.xcconfig */,
+				251EB276BA28D12051FDD287 /* Pods-MasterProjectv1.debug.xcconfig */,
+				A915D7413EA01246CE03A305 /* Pods-MasterProjectv1.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9CC2FFC81C006EAC00A10E16 = {
 			isa = PBXGroup;
 			children = (
+				9C5A03301CA03A0200F13702 /* Beacon+CoreDataProperties.swift */,
+				9CAB5FA11C2050EA0092B178 /* Beacon.swift */,
+				9CAB5FA41C2054550092B178 /* DataController.swift */,
 				9CC2FFD31C006EAD00A10E16 /* MasterProjectv1 */,
 				9CC2FFE81C006EAD00A10E16 /* MasterProjectv1Tests */,
 				9CC2FFF31C006EAD00A10E16 /* MasterProjectv1UITests */,
 				9CC2FFD21C006EAD00A10E16 /* Products */,
+				9CAB5F931C2043CE0092B178 /* MasterProjectv1-Bridging-Header.h */,
+				8AA394D770217B42232A28CF /* Pods */,
+				B2F89568119976CF2C80DCAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +143,15 @@
 			children = (
 				9CC2FFD41C006EAD00A10E16 /* AppDelegate.swift */,
 				9CC2FFD61C006EAD00A10E16 /* ViewController.swift */,
+				9C4648041C3875A100F3B083 /* RestApiManager.swift */,
 				9CC2FFD81C006EAD00A10E16 /* Main.storyboard */,
+				9CAB5F8E1C2017820092B178 /* iBeaconInputViewController.swift */,
+				9CAB5F8C1C20087A0092B178 /* iBeaconTableViewCell.swift */,
+				9CAB5F8A1C20082D0092B178 /* iBeaconTableViewController.swift */,
 				9CC2FFDB1C006EAD00A10E16 /* Assets.xcassets */,
 				9CC2FFDD1C006EAD00A10E16 /* LaunchScreen.storyboard */,
 				9CC2FFE01C006EAD00A10E16 /* Info.plist */,
+				9CAB5F901C20410D0092B178 /* myCoreDataModel.xcdatamodeld */,
 			);
 			path = MasterProjectv1;
 			sourceTree = "<group>";
@@ -125,6 +174,15 @@
 			path = MasterProjectv1UITests;
 			sourceTree = "<group>";
 		};
+		B2F89568119976CF2C80DCAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16F8C22F2468139CBC5F24D8 /* libPods.a */,
+				6A22525F44D41FB9FA0D9174 /* Pods_MasterProjectv1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CC2FFF91C006EAD00A10E16 /* Build configuration list for PBXNativeTarget "MasterProjectv1" */;
 			buildPhases = (
+				C887B1B26490510DCDD1ABDC /* Check Pods Manifest.lock */,
 				9CC2FFCD1C006EAD00A10E16 /* Sources */,
 				9CC2FFCE1C006EAD00A10E16 /* Frameworks */,
 				9CC2FFCF1C006EAD00A10E16 /* Resources */,
+				AF66CEA5BC96C8ACA6E3C533 /* Embed Pods Frameworks */,
+				AF479389C85FE615CAF4CA0B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,11 +249,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Umoru Joseph";
 				TargetAttributes = {
 					9CC2FFD01C006EAD00A10E16 = {
 						CreatedOnToolsVersion = 7.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					9CC2FFE41C006EAD00A10E16 = {
 						CreatedOnToolsVersion = 7.1;
@@ -251,13 +317,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AF479389C85FE615CAF4CA0B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MasterProjectv1/Pods-MasterProjectv1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF66CEA5BC96C8ACA6E3C533 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MasterProjectv1/Pods-MasterProjectv1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C887B1B26490510DCDD1ABDC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9CC2FFCD1C006EAD00A10E16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9CC2FFD71C006EAD00A10E16 /* ViewController.swift in Sources */,
+				9CAB5F8D1C20087A0092B178 /* iBeaconTableViewCell.swift in Sources */,
+				9CAB5F921C20410D0092B178 /* myCoreDataModel.xcdatamodeld in Sources */,
+				9CAB5FA51C2054550092B178 /* DataController.swift in Sources */,
+				9CAB5F8B1C20082D0092B178 /* iBeaconTableViewController.swift in Sources */,
+				9C5A03311CA03A0200F13702 /* Beacon+CoreDataProperties.swift in Sources */,
+				9CAB5F8F1C2017820092B178 /* iBeaconInputViewController.swift in Sources */,
 				9CC2FFD51C006EAD00A10E16 /* AppDelegate.swift in Sources */,
+				9C4648051C3875A200F3B083 /* RestApiManager.swift in Sources */,
+				9CAB5FA31C2050EA0092B178 /* Beacon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +466,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -360,6 +483,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -372,12 +496,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_PROFILING_CODE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -389,6 +515,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -404,6 +531,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -411,33 +539,43 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_PROFILING_CODE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
 		9CC2FFFA1C006EAD00A10E16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 251EB276BA28D12051FDD287 /* Pods-MasterProjectv1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MasterProjectv1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.umorujoseph.MasterProjectv1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MasterProjectv1-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		9CC2FFFB1C006EAD00A10E16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A915D7413EA01246CE03A305 /* Pods-MasterProjectv1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MasterProjectv1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.umorujoseph.MasterProjectv1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MasterProjectv1-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -449,7 +587,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.umorujoseph.MasterProjectv1Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasterProjectv1.app/MasterProjectv1";
+				TEST_HOST = "";
+				"TEST_HOST[sdk=*]" = "$(BUILT_PRODUCTS_DIR)/MasterProjectv1.app/MasterProjectv1";
 			};
 			name = Debug;
 		};
@@ -461,7 +600,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.umorujoseph.MasterProjectv1Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasterProjectv1.app/MasterProjectv1";
+				TEST_HOST = "";
+				"TEST_HOST[sdk=*]" = "$(BUILT_PRODUCTS_DIR)/MasterProjectv1.app/MasterProjectv1";
 			};
 			name = Release;
 		};
@@ -484,6 +624,7 @@
 				9CC2FFFB1C006EAD00A10E16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CC2FFFC1C006EAD00A10E16 /* Build configuration list for PBXNativeTarget "MasterProjectv1Tests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +633,7 @@
 				9CC2FFFE1C006EAD00A10E16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CC2FFFF1C006EAD00A10E16 /* Build configuration list for PBXNativeTarget "MasterProjectv1UITests" */ = {
 			isa = XCConfigurationList;
@@ -500,8 +642,22 @@
 				9CC200011C006EAD00A10E16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9CAB5F901C20410D0092B178 /* myCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9CAB5F911C20410D0092B178 /* myCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 9CAB5F911C20410D0092B178 /* myCoreDataModel.xcdatamodel */;
+			path = myCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9CC2FFC91C006EAD00A10E16 /* Project object */;
 }

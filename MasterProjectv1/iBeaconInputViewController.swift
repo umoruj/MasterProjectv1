@@ -1,4 +1,4 @@
-//
+ //
 //  iBeaconInputViewController.swift
 //  MasterProjectv1
 //
@@ -7,21 +7,34 @@
 //
 
 import UIKit
+import CoreData
 
 class iBeaconInputViewController: UIViewController {
-
+    
+    var webSite: String?
+    
+    @IBOutlet var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        webSite = "https://masterprojectv1.herokuapp.com"
+        print(webSite)
+        
+        
+        if let address = webSite {
+            let webURL = NSURL(string: address)
+            let urlRequest = NSURLRequest(URL: webURL!)
+            webView.loadRequest(urlRequest)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+   
     /*
     // MARK: - Navigation
 

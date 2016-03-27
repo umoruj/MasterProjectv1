@@ -7,89 +7,91 @@
 //
 
 import UIKit
+import CoreData
 
 class iBeaconTableViewController: UITableViewController {
-
+    var location = [String]()
+    var iBeaconMajorValue = [String]()
+    var iBeaconMinorValue = [String]()
+    var fetchedBeacon = [Beacon]()
+    var placeHolder = Int()
+    
+    let address1: String = "https://masterprojectv1.herokuapp.com"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        getBeacons()
+        
+        var timer2 = NSTimer()
+        timer2 = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(iBeaconTableViewController.view1234), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.location.count
     }
-
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell =
+        self.tableView.dequeueReusableCellWithIdentifier(
+            "ibeaconTableCell", forIndexPath: indexPath)
+            as! iBeaconTableViewCell
+        
+        let row = indexPath.row
+        
+        cell.locationLabel.font =
+            UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        cell.locationLabel.text = self.location[row]
+        cell.majorLabel.text = self.iBeaconMajorValue[row]
+        cell.minorLabel.text = self.iBeaconMinorValue[row]
         return cell
     }
-    */
+    
+    func getBeacons(){
+        RestApiManager.sharedInstance.getBeaconList{json -> Void in
+            let numberOfBeacons = json.count as Int
+            var p = 0
+            for _ in 1...numberOfBeacons{
+                let loc = json[p]["location"].string! as String
+                let maj = json[p]["Major"].string! as String
+                let min = json[p]["Minor"].string! as String
+                self.location.append(loc)
+                self.iBeaconMajorValue.append(maj)
+                self.iBeaconMinorValue.append(min)
+                p++
+                
+                print(loc, maj, min)
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue,
+        sender: AnyObject?) {
+            
+            if segue.identifier == "ShowAddBeaconsPage" {
+                let detailViewController = segue.destinationViewController
+                    as! iBeaconInputViewController
+                
+                
+                detailViewController.webSite = self.address1
+            }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    func view1234() {
+        self.tableView.reloadData()
+        
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
