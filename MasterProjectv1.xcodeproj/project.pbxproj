@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54DD0CED5C4D7C043A4371B5 /* Pods_MasterProjectv1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A22525F44D41FB9FA0D9174 /* Pods_MasterProjectv1.framework */; };
+		9C2910D91CB141EF00DEFD7D /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2910D81CB141EF00DEFD7D /* CoreMotion.framework */; };
 		9C4648051C3875A200F3B083 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4648041C3875A100F3B083 /* RestApiManager.swift */; };
 		9C5A03311CA03A0200F13702 /* Beacon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5A03301CA03A0200F13702 /* Beacon+CoreDataProperties.swift */; };
 		9CAB5F8B1C20082D0092B178 /* iBeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB5F8A1C20082D0092B178 /* iBeaconTableViewController.swift */; };
@@ -23,6 +24,8 @@
 		9CC2FFDF1C006EAD00A10E16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC2FFDD1C006EAD00A10E16 /* LaunchScreen.storyboard */; };
 		9CC2FFEA1C006EAD00A10E16 /* MasterProjectv1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2FFE91C006EAD00A10E16 /* MasterProjectv1Tests.swift */; };
 		9CC2FFF51C006EAD00A10E16 /* MasterProjectv1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2FFF41C006EAD00A10E16 /* MasterProjectv1UITests.swift */; };
+		9CF6187D1CBA60D900889187 /* GeoLocFenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6187C1CBA60D900889187 /* GeoLocFenceViewController.swift */; };
+		9CF6187F1CBA860000889187 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF6187E1CBA860000889187 /* MapKit.framework */; };
 		E860CADDDE83B40EC86AB9D1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F8C22F2468139CBC5F24D8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,7 @@
 		16F8C22F2468139CBC5F24D8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		251EB276BA28D12051FDD287 /* Pods-MasterProjectv1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterProjectv1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MasterProjectv1/Pods-MasterProjectv1.debug.xcconfig"; sourceTree = "<group>"; };
 		6A22525F44D41FB9FA0D9174 /* Pods_MasterProjectv1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterProjectv1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C2910D81CB141EF00DEFD7D /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		9C4648041C3875A100F3B083 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		9C5A03301CA03A0200F13702 /* Beacon+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Beacon+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9CAB5F8A1C20082D0092B178 /* iBeaconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iBeaconTableViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 		9CC2FFF01C006EAD00A10E16 /* MasterProjectv1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterProjectv1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC2FFF41C006EAD00A10E16 /* MasterProjectv1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterProjectv1UITests.swift; sourceTree = "<group>"; };
 		9CC2FFF61C006EAD00A10E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CF6187C1CBA60D900889187 /* GeoLocFenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoLocFenceViewController.swift; sourceTree = "<group>"; };
+		9CF6187E1CBA860000889187 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A915D7413EA01246CE03A305 /* Pods-MasterProjectv1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterProjectv1.release.xcconfig"; path = "Pods/Target Support Files/Pods-MasterProjectv1/Pods-MasterProjectv1.release.xcconfig"; sourceTree = "<group>"; };
 		B8B6F0FFEB6E591BA38BBF15 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D075E96B8793F2D9E7E40EEE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,7 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2910D91CB141EF00DEFD7D /* CoreMotion.framework in Frameworks */,
 				E860CADDDE83B40EC86AB9D1 /* libPods.a in Frameworks */,
+				9CF6187F1CBA860000889187 /* MapKit.framework in Frameworks */,
 				54DD0CED5C4D7C043A4371B5 /* Pods_MasterProjectv1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +153,7 @@
 				9CC2FFD61C006EAD00A10E16 /* ViewController.swift */,
 				9C4648041C3875A100F3B083 /* RestApiManager.swift */,
 				9CC2FFD81C006EAD00A10E16 /* Main.storyboard */,
+				9CF6187C1CBA60D900889187 /* GeoLocFenceViewController.swift */,
 				9CAB5F8E1C2017820092B178 /* iBeaconInputViewController.swift */,
 				9CAB5F8C1C20087A0092B178 /* iBeaconTableViewCell.swift */,
 				9CAB5F8A1C20082D0092B178 /* iBeaconTableViewController.swift */,
@@ -177,6 +186,8 @@
 		B2F89568119976CF2C80DCAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CF6187E1CBA860000889187 /* MapKit.framework */,
+				9C2910D81CB141EF00DEFD7D /* CoreMotion.framework */,
 				16F8C22F2468139CBC5F24D8 /* libPods.a */,
 				6A22525F44D41FB9FA0D9174 /* Pods_MasterProjectv1.framework */,
 			);
@@ -257,6 +268,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
 							};
 						};
 					};
@@ -377,6 +391,7 @@
 				9CAB5F8B1C20082D0092B178 /* iBeaconTableViewController.swift in Sources */,
 				9C5A03311CA03A0200F13702 /* Beacon+CoreDataProperties.swift in Sources */,
 				9CAB5F8F1C2017820092B178 /* iBeaconInputViewController.swift in Sources */,
+				9CF6187D1CBA60D900889187 /* GeoLocFenceViewController.swift in Sources */,
 				9CC2FFD51C006EAD00A10E16 /* AppDelegate.swift in Sources */,
 				9C4648051C3875A200F3B083 /* RestApiManager.swift in Sources */,
 				9CAB5FA31C2050EA0092B178 /* Beacon.swift in Sources */,

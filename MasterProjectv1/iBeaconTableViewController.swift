@@ -69,7 +69,7 @@ class iBeaconTableViewController: UITableViewController {
                 self.location.append(loc)
                 self.iBeaconMajorValue.append(maj)
                 self.iBeaconMinorValue.append(min)
-                p++
+                p += 1
                 
                 print(loc, maj, min)
 

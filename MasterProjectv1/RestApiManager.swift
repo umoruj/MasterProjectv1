@@ -33,11 +33,11 @@ class RestApiManager: NSObject {
         task.resume()
     }
     
-    func makeHTTPPostRequest(path: String, userID: String, location: String, timestamp: String, distance1: Int, distance2: Int, distance3: Int, distance4: Int){
+    func makeHTTPPostRequest(path: String, userID: String, location: String, timestamp: String, data: [(String,String,Int,Int,Int,Int)]){
         let request = NSMutableURLRequest(URL: NSURL(string: path)!)
         request.HTTPMethod = "POST"
         
-        let postString = "userID=\(userID)&location=\(location)&timestamp=\(timestamp)&distance1=\(distance1)&distance2=\(distance2)&distance3=\(distance3)&distance4=\(distance4)"
+        let postString = "userID=\(userID)&location=\(location)&timestamp=\(timestamp)&dataTuple=\(data)"
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
         

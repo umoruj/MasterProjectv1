@@ -18,15 +18,20 @@ class iBeaconInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webSite = "https://masterprojectv1.herokuapp.com"
-        print(webSite)
+        //self.webSite = "https://masterprojectv1.herokuapp.com"
+        //print(self.webSite)
         
+        //if let address = self.webSite {
+            //let webURL = NSURL(string: address)
+            //print(webURL)
+            //let urlRequest = NSURLRequest(URL: webURL!)
+          //  webView.loadRequest(urlRequest)
+        //}
         
-        if let address = webSite {
-            let webURL = NSURL(string: address)
-            let urlRequest = NSURLRequest(URL: webURL!)
-            webView.loadRequest(urlRequest)
-        }
+        let urlPath: String = "https://masterprojectv1.herokuapp.com"
+        let url: NSURL = NSURL(string: urlPath)!
+        let request1: NSURLRequest = NSURLRequest(URL: url)
+        webView?.loadRequest(request1)
         
     }
 
