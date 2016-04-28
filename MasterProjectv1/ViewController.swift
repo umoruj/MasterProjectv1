@@ -96,8 +96,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         
         locationManager.delegate = self
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
-            locationManager.requestWhenInUseAuthorization()
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedAlways) {
+            locationManager.requestAlwaysAuthorization()
         }
         locationManager.startRangingBeaconsInRegion(region)
         
@@ -122,9 +122,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func outputAccData(acceleration: CMAcceleration){
-        x_axisval?.text = "\(acceleration.x).2fg"
-        y_axisval?.text = "\(acceleration.y).2fg"
-        z_axisval?.text = "\(acceleration.z).2fg"
+        //x_axisval?.text = "\(acceleration.x).2fg"
+        //y_axisval?.text = "\(acceleration.y).2fg"
+        //z_axisval?.text = "\(acceleration.z).2fg"
         
         self.xaxis = abs(runAvg(acceleration.x))
         self.yaxis = abs(runAvg(acceleration.y))
@@ -154,10 +154,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func verifyMotion(){
         if (self.xaxis != 0) && (self.yaxis != 0) && (self.zaxis != 0){
             if(self.xaxis < 0.31) || (self.yaxis < 0.31) || (self.yaxis < 0.31){
-                print("ipad move")
+                print("ipad moved")
                 locationManager.startRangingBeaconsInRegion(region)
             }else{
-                print("ipad did not moved")
+                print("ipad did not move")
                 locationManager.stopRangingBeaconsInRegion(region)
             }
         }
