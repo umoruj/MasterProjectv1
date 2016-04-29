@@ -24,7 +24,7 @@ class AddGeotificationViewController: UITableViewController {
     @IBOutlet weak var noteTextField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     
-    var delegate: AddGeotificationsViewControllerDelegate!
+    var delegate: AddGeotificationsViewControllerDelegate! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,9 @@ class AddGeotificationViewController: UITableViewController {
         let note = noteTextField.text
         let eventType = (eventTypeSegmentedControl.selectedSegmentIndex == 0) ? EventType.OnEntry : EventType.OnExit
         print("Initial start")
+        if (delegate != nil){
         delegate!.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: eventType)
+        }
     }
     
     @IBAction private func onZoomToCurrentLocation(sender: AnyObject) {

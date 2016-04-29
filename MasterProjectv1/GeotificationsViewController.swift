@@ -21,12 +21,8 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 1
         locationManager.delegate = self
-        // 2
         locationManager.requestAlwaysAuthorization()
-        // 3
         loadAllGeotifications()
     }
     
@@ -66,7 +62,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     
     func addGeotification(geotification: Geotification) {
         geotifications.append(geotification)
-        //mapView.addAnnotation(geotification)
+        mapView.addAnnotation(geotification)
         addRadiusOverlayForGeotification(geotification)
         updateGeotificationsCount()
     }

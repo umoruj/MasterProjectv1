@@ -151,7 +151,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wW4-fr-HVw" id="y5O-yq-OF7">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fj-Mb-ysM">
@@ -280,7 +280,7 @@
                     <navigationItem key="navigationItem" title="Geotifications (0)" id="b7a-vj-Q2M">
                         <barButtonItem key="rightBarButtonItem" title="+" id="i8Y-mG-2cW">
                             <connections>
-                                <segue destination="m6h-Vu-TQN" kind="presentation" id="pXM-f1-g8W"/>
+                                <segue destination="m6h-Vu-TQN" kind="presentation" identifier="addGeotification" id="pXM-f1-g8W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -303,11 +303,11 @@
                         <sections>
                             <tableViewSection id="0nP-J4-6BX">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GeofenceTableCell" rowHeight="342" id="4Xb-t6-WF3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="342" id="4Xb-t6-WF3">
                                         <rect key="frame" x="0.0" y="64" width="600" height="342"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Xb-t6-WF3" id="99w-Xn-ijg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="342"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="341.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gqa-49-wKe">
@@ -317,7 +317,7 @@
                                                         <segment title="Upon Exit"/>
                                                     </segments>
                                                 </segmentedControl>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IOk-Hm-2ZD">
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IOk-Hm-2ZD">
                                                     <rect key="frame" x="8" y="44" width="584" height="290"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="HiG-AN-A2k" id="cY6-R0-tdc"/>
@@ -344,7 +344,7 @@
                                         <rect key="frame" x="0.0" y="406" width="600" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W0U-UT-MTe" id="IMs-wA-t6F">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOM-lG-NrA">
@@ -353,7 +353,7 @@
                                                         <constraint firstAttribute="width" constant="56" id="XGA-qX-f8R"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9LW-yc-G8X">
@@ -378,13 +378,13 @@
                                         <rect key="frame" x="0.0" y="460" width="600" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zzF-SO-yzq" id="Nci-9F-SC4">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKE-u3-scJ">
                                                     <rect key="frame" x="13" y="16" width="37" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert text for annotation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVz-lS-TCo">
@@ -432,12 +432,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TA-kA-mix" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Add" id="qT1-DC-eJ6">
                     <connections>
-                        <action selector="onAdd:" destination="mY5-qb-OGV" id="9m5-u3-6RD"/>
+                        <action selector="onAdd:" destination="mY5-qb-OGV" id="hnI-e8-rq5"/>
                     </connections>
                 </barButtonItem>
                 <barButtonItem image="CurrentLocation" id="dsG-Qa-a0f">
                     <connections>
-                        <action selector="onZoomToCurrentLocation:" destination="mY5-qb-OGV" id="Mwk-OP-Ftj"/>
+                        <action selector="onZoomToCurrentLocation:" destination="mY5-qb-OGV" id="eXL-cN-ODP"/>
                     </connections>
                 </barButtonItem>
             </objects>
