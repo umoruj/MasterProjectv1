@@ -86,21 +86,13 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     
     func addGeotificationViewController(controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: EventType) {
         controller.dismissViewControllerAnimated(true, completion: nil)
-        print("money")
         // Add geotification
-        // 1
         let clampedRadius = (radius > locationManager.maximumRegionMonitoringDistance) ? locationManager.maximumRegionMonitoringDistance : radius
         
         let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier, note: note, eventType: eventType)
-        print("money1")
         addGeotification(geotification)
-        print("money2")
-        // 2
         startMonitoringGeotification(geotification)
-        print("money3")
-        
         saveAllGeotifications()
-        print("money4")
     }
     
     // MARK: MKMapViewDelegate
@@ -163,6 +155,21 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
                 }
             }
         }
+    }
+    
+    func getLongitudeAndLatitude(mapView: MKMapView) -> [Double]{
+        var cordLnLa = [Double]()
+        if let coordinate = mapView.userLocation.location?.coordinate {
+            cordLnLa.append(coordinate.latitude)
+            cordLnLa.append(coordinate.longitude)
+        }
+        return cordLnLa
+    }
+
+    
+    func getUserLongitudeanLatitude()->[Double]{
+        let lonLA = getLongitudeAndLatitude(mapView)
+        return lonLA
     }
     
     // MARK: Other mapview functions

@@ -24,4 +24,3 @@ func zoomToUserLocationInMapView(mapView: MKMapView) {
         mapView.setRegion(region, animated: true)
     }
 }
-

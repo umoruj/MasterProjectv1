@@ -13,6 +13,9 @@ import CoreLocation
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate  {
 
     var window: UIWindow?
+    var services = ViewController()
+    var services2 = GeotificationsViewController()
+    let testURL = "https://masterprojectv1.herokuapp.com/locationLog/location"
     
     let locationManager = CLLocationManager() // Add this statement
     
@@ -20,6 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         locationManager.delegate = self                // Add this line
         locationManager.requestAlwaysAuthorization()   // And this one
+        
+        //application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Sound | .Alert | .Badge, categories: nil))
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        
         return true
     }
 
@@ -45,13 +54,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     func handleRegionEvent(region: CLRegion!) {
-        print("Geofence triggered!")
+        // Show an alert if application is active
+        if UIApplication.sharedApplication().applicationState == .Active {
+            if let message = notefromRegionIdentifier(region.identifier) {
+                if let viewController = window?.rootViewController {
+                    showSimpleAlertWithTitle(nil, message: message, viewController: viewController)
+                }
+            }
+        } else {
+            // Otherwise present a local notification
+            var notification = UILocalNotification()
+            notification.alertBody = notefromRegionIdentifier(region.identifier)
+            notification.soundName = "Default";
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        }
+    }
+    func sendData(){
+        let longLat = String(services2.getUserLongitudeanLatitude())
+        let timeStamp = services.locationTimestamp()
+        let userID = "Joseph Umoru"
+        let location = "Outside the geofence"
+        let data1 = [(longLat,timeStamp,0,0,0,0)]
+        print(data1)
+        RestApiManager.sharedInstance.makeHTTPPostRequest(testURL, userID: userID, location: location, timestamp: timeStamp, data: data1)
     }
     
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if region is CLCircularRegion {
             handleRegionEvent(region)
             print("entered")
+            services.withinTheBuilding()
+            //sendData()
         }
     }
     
@@ -59,7 +92,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if region is CLCircularRegion {
             handleRegionEvent(region)
             print("exit")
+            services.outOfTheBuilding()
+            //sendData()
         }
+    }
+    
+    func notefromRegionIdentifier(identifier: String) -> String? {
+        if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
+            for savedItem in savedItems {
+                if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
+                    if geotification.identifier == identifier {
+                        return geotification.note
+                    }
+                }
+            }
+        }
+        return nil
     }
 
 

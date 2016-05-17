@@ -26,6 +26,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var count = String()
     let testURL = "https://masterprojectv1.herokuapp.com/locationLog/location"
     let userID = "Joseph Umoru"
+    var beaconAggregate = [[CLBeacon]]()
+    var aggregateCounter = Int()
     
     @IBOutlet weak var proximityLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -94,12 +96,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.view.addSubview(kitchenSquare!)
         self.view.addSubview(livingRoomRectangle!)
         
+        UIDevice.currentDevice().batteryMonitoringEnabled = true
+        
         
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedAlways) {
             locationManager.requestAlwaysAuthorization()
         }
         locationManager.startRangingBeaconsInRegion(region)
+        if #available(iOS 9.0, *) {
+            locationManager.allowsBackgroundLocationUpdates = true
+            //locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        } else {
+            // Fallback on earlier versions
+        }
         
         //seedBeacon()
         //fetch()
@@ -107,6 +117,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         var timer1 = NSTimer()
         timer1 = NSTimer.scheduledTimerWithTimeInterval(7.0, target: self, selector: #selector(ViewController.verifyMotion), userInfo: nil, repeats: true)
+        
+        var timer2 = NSTimer()
+        timer2 = NSTimer.scheduledTimerWithTimeInterval(60.0, target: self, selector: #selector(ViewController.sendData1234), userInfo: nil, repeats: true)
+        
+        var timer3 = NSTimer()
+        timer3 = NSTimer.scheduledTimerWithTimeInterval(660.0, target: self, selector: #selector(ViewController.outOfTheBuilding), userInfo: nil, repeats: true)
+        
+        var timer4 = NSTimer()
+        timer4 = NSTimer.scheduledTimerWithTimeInterval(669.0, target: self, selector: #selector(ViewController.withinTheBuilding), userInfo: nil, repeats: true)
         
         movementManager.accelerometerUpdateInterval = 0.5
         
@@ -119,6 +138,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 print("\(NSError)")
             }
         }
+    }
+    
+    func batteryLevel() -> Float {
+        
+        return UIDevice.currentDevice().batteryLevel
+    }
+    
+    func outOfTheBuilding(){
+        locationManager.stopRangingBeaconsInRegion(region)
+        movementManager.stopGyroUpdates()
+    }
+    
+    func withinTheBuilding(){
+        locationManager.startRangingBeaconsInRegion(region)
+        movementManager.startGyroUpdates()
     }
     
     func outputAccData(acceleration: CMAcceleration){
@@ -154,11 +188,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func verifyMotion(){
         if (self.xaxis != 0) && (self.yaxis != 0) && (self.zaxis != 0){
             if(self.xaxis < 0.31) || (self.yaxis < 0.31) || (self.yaxis < 0.31){
-                print("ipad moved")
-                locationManager.startRangingBeaconsInRegion(region)
+                //print("ipad moved")
+                //locationManager.startRangingBeaconsInRegion(region)
+                //locationManager.pausesLocationUpdatesAutomatically = false
             }else{
-                print("ipad did not move")
-                locationManager.stopRangingBeaconsInRegion(region)
+                //print("ipad did not move")
+                //locationManager.stopRangingBeaconsInRegion(region)
+                //locationManager.pausesLocationUpdatesAutomatically  = true
             }
         }
     }
@@ -174,10 +210,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown}
         if (knownBeacons.count > 0) {
             findPerson(knownBeacons)
-            //self.count = self.locations[(knownBeacons.first?.minor.integerValue)!]!
+            //beaconAggregator(knownBeacons)
         }
-        
-        //counter(self.count)
+    }
+    
+    func beaconAggregator(node: [CLBeacon]){
+        self.beaconAggregate.append(node)
+        if(self.aggregateCounter < 899){
+        if(beaconAggregate.count == 2){
+            findPerson(beaconAggregate[1])
+            self.beaconAggregate = [[CLBeacon]]()
+            self.aggregateCounter += 1
+        }
+        }else{
+            findPerson(node)
+        }
         
     }
     
@@ -254,7 +301,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         getLocationOfIndividual(self.distanceLocation1,distance2: self.distanceLocation2, distance3: self.distanceLocation3, distance4: self.distanceLocation4)
         //setBeacon(distance1, distance2: distance2, distance3: distance3,distance4: distance4)
-        /**checkIfDataIsSame(self.distance1,distanceB: self.distance2,distanceC: self.distance3,distanceD: self.distance4){(result) ->() in
+        checkIfDataIsSame(self.distance1,distanceB: self.distance2,distanceC: self.distance3,distanceD: self.distance4){(result) ->() in
             if(0 ... 3 ~= self.distance1) && (0 ... 3 ~= self.distance2) && (0 ... 3 ~= self.distance3) && (0 ... 3 ~= self.distance4){
                 let entity = NSEntityDescription.insertNewObjectForEntityForName("Beacon", inManagedObjectContext: self.moc) as! Beacon
                 let timestamp = self.locationTimestamp()
@@ -274,7 +321,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     }
                 }
             }
-        }**/
+        }
         
         //fetch()
         //let bean = locationTimestamp()
@@ -358,13 +405,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let b = Int(fetchedPerson[counter].distance2!)
             let c = Int(fetchedPerson[counter].distance3!)
             let d = Int(fetchedPerson[counter].distance4!)
-            print("database last entry",a,b,c,d)
-            print("****|")
-            print("before if",self.distance1,self.distance2,self.distance3,self.distance4)
-            print("****|tyyy", counter)
-            
-            //if((a != 0) || (b != 0) || (c != 0) || (d != 0)){
-            print("after if",self.distance1,self.distance2,self.distance3,self.distance4)
             
             if ((self.distance1 != a) || (self.distance2 != b) || (self.distance3 != c) || (self.distance4 != d)){
                 if((a != 0) || (b != 0) || (c != 0) || (d != 0)){
@@ -435,7 +475,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             fatalError("Failed to fetch person: \(error)")
         }
     }
-    
     func locationTimestamp()-> String {
         let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .LongStyle)
         return timestamp
@@ -446,7 +485,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         print(self.distance1)
         let data1 = sortDataForServer(timeStamp)
         print(data1)
+        if data1.count > 1 {
         RestApiManager.sharedInstance.makeHTTPPostRequest(testURL, userID: self.userID, location: self.locationInTime, timestamp: timeStamp, data: data1)
+        }
     }
 }
 
