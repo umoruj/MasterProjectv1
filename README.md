@@ -13,3 +13,5 @@ In the issue of mobile devices been battery powered, and the processing and coll
 These challenges, have given rise to various architectural tactics in the area of energy efficiency, and resource control. 
 This thesis, aims to provide an empirical investigation, in the feasibility of the structured architectural tactics.
 
+The mobile application was developed using swift 2.2
+
