@@ -440,7 +440,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func sortDataForServer(timeSt: String)->[(String,String,Int,Int,Int,Int)]{
         let dateformatter = NSDateFormatter()
-        dateformatter.dateFormat = "dd/MM/yy h:mm:ss aaa zzz"
+        dateformatter.dateFormat = "MM dd, yy, h:mm:ss aaa zzz"
         let now = dateformatter.dateFromString(timeSt)
         let timeST1 = now?.dateByAddingTimeInterval(-60.0)
         
